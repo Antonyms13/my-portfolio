@@ -18,7 +18,7 @@ function Portfolio() {
     "JavaScript",
     "HTML",
     "CSS",
-    "Tailwind",
+    "Responsive Design",
     "Node.js",
     "Git",
   ];
@@ -27,17 +27,22 @@ function Portfolio() {
     {
       title: "Frontend Development Certification",
       description:
-        "Completed a certification focused on modern frontend technologies and responsive web design.",
+        "Completed training focused on modern frontend tools, responsive design, and clean UI development.",
+     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Built 10+ Web Projects",
+      title: "Built Multiple Web Projects",
       description:
-        "Created multiple personal and practice projects using React, TypeScript, and JavaScript.",
+        "Developed several personal and academic web applications using React, TypeScript, and JavaScript.",
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Hackathon Participant",
+      title: "Hackathon and Team Collaboration",
       description:
-        "Participated in coding challenges and collaborative development events.",
+        "Worked with others in coding activities and project collaboration to improve teamwork and development skills.",
+      image:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -45,21 +50,21 @@ function Portfolio() {
     {
       title: "E-Commerce Website",
       description:
-        "A modern shopping platform with product listings, cart functionality, and responsive design.",
+        "A modern shopping platform with product listings, cart features, and responsive design.",
       live: "https://example.com",
       github: "https://github.com/yourusername/project1",
     },
     {
       title: "Task Management App",
       description:
-        "A productivity app for managing daily tasks with filtering, status tracking, and local storage.",
+        "A productivity app for organizing daily tasks with status tracking and filtering.",
       live: "https://example.com",
       github: "https://github.com/yourusername/project2",
     },
     {
       title: "Weather Dashboard",
       description:
-        "A weather app that displays forecasts with a simple and elegant interface.",
+        "A clean weather app that displays forecast information in a simple and user-friendly interface.",
       live: "https://example.com",
       github: "https://github.com/yourusername/project3",
     },
@@ -85,10 +90,11 @@ function Portfolio() {
         <section id="home" className="hero-section">
           <div className="hero-content">
             <h1 className="hero-title">
-              Hi, I'm <span className="highlight">Anthony</span>
+              Hi, I'm <span className="highlight">Your Name</span>
             </h1>
             <p className="hero-subtitle">
-              Confidence comes from dedication and experience. Believe in yourself and continue creating your path.
+              A creative frontend developer passionate about building presentable,
+              responsive, and user-friendly web applications.
             </p>
 
             <div className="hero-buttons">
@@ -112,7 +118,10 @@ function Portfolio() {
         <section id="about" className="section">
           <h2 className="section-title">About Me</h2>
           <p className="section-text">
-            This portfolio represents not only my work, but also my passion for learning and improving. I aim to create meaningful experiences through dedication and creativity.
+            I enjoy creating modern websites and web applications with clean
+            layouts, responsive design, and interactive user experiences. I like
+            learning new technologies and improving my skills through projects
+            and real-world practice.
           </p>
 
           <div className="skills-container">
@@ -127,13 +136,17 @@ function Portfolio() {
         <section id="achievements" className="section">
           <h2 className="section-title">Achievements</h2>
           <p className="section-text">
-            A few highlights of my learning journey, technical growth, and
-            project experience.
+            Some highlights of my learning journey and development experience.
           </p>
 
           <div className="project-grid">
             {achievements.map((achievement, index) => (
               <div key={index} className="project-card">
+                <img
+                  src={achievement.image}
+                  alt={achievement.title}
+                  className="achievement-image"
+                />
                 <h3 className="project-title">{achievement.title}</h3>
                 <p className="project-description">
                   {achievement.description}
@@ -175,8 +188,7 @@ function Portfolio() {
         <section id="contact" className="section">
           <h2 className="section-title">Contact</h2>
           <p className="section-text">
-            Want to work together or have a project in mind? Feel free to reach
-            out.
+            Want to work together or discuss a project? Feel free to contact me.
           </p>
 
           <div className="contact-buttons">
@@ -184,7 +196,7 @@ function Portfolio() {
               className="primary-button"
               onClick={() => openLink("mailto:your@email.com")}
             >
-              Acmeparanum.student@asiancollege.edu.ph
+              Email Me
             </button>
 
             <button
@@ -196,9 +208,7 @@ function Portfolio() {
 
             <button
               className="secondary-button"
-              onClick={() =>
-                openLink("https://linkedin.com/in/yourusername")
-              }
+              onClick={() => openLink("https://linkedin.com/in/yourusername")}
             >
               LinkedIn
             </button>
