@@ -1,4 +1,6 @@
 import "./Portfolio.css";
+import certificate1 from "./assets/certificate1.png";
+import certificate2 from "./assets/certificate2.png";
 
 function Portfolio() {
   const scrollToSection = (id: string) => {
@@ -23,28 +25,20 @@ function Portfolio() {
     "Git",
   ];
 
-  const achievements = [
-    {
-      title: "Frontend Development Certification",
-      description:
-        "Completed training focused on modern frontend tools, responsive design, and clean UI development.",
-     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Built Multiple Web Projects",
-      description:
-        "Developed several personal and academic web applications using React, TypeScript, and JavaScript.",
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Hackathon and Team Collaboration",
-      description:
-        "Worked with others in coding activities and project collaboration to improve teamwork and development skills.",
-      image:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
-    },
-  ];
+const achievements = [
+  {
+    title: "Front-End Development Libraries V8",
+    description:
+      "Earned a freeCodeCamp certification focused on React, JavaScript libraries, and frontend development.",
+    image: certificate1,
+  },
+  {
+    title: "Legacy Responsive Web Design V8",
+    description:
+      "Completed a freeCodeCamp certification covering HTML, CSS, accessibility, and responsive design.",
+    image: certificate2,
+  },
+];
 
   const projects = [
     {
@@ -90,7 +84,7 @@ function Portfolio() {
         <section id="home" className="hero-section">
           <div className="hero-content">
             <h1 className="hero-title">
-              Hi, I'm <span className="highlight">Your Name</span>
+              Hi, I'm <span className="highlight">Anthony</span>
             </h1>
             <p className="hero-subtitle">
               A creative frontend developer passionate about building presentable,
@@ -194,21 +188,21 @@ function Portfolio() {
           <div className="contact-buttons">
             <button
               className="primary-button"
-              onClick={() => openLink("mailto:your@email.com")}
+              onClick={() => openLink("mailto:acmeparanum.student@Asiancollege.edu.ph")}
             >
               Email Me
             </button>
 
             <button
               className="secondary-button"
-              onClick={() => openLink("https://github.com/yourusername")}
+              onClick={() => openLink("https://github.com/antonyms13")}
             >
               GitHub
             </button>
 
             <button
               className="secondary-button"
-              onClick={() => openLink("https://linkedin.com/in/yourusername")}
+              onClick={() => openLink("https://linkedin.com/in/onyomeparanum@gmail.com")}
             >
               LinkedIn
             </button>
