@@ -1,6 +1,22 @@
 import "./Portfolio.css";
 import certificate1 from "./assets/certificate1.png";
 import certificate2 from "./assets/certificate2.png";
+import nc2Certificate from "./assets/nc2-computer-systems-servicing.png";
+import nc3Certificate from "./assets/nc3-events-management.png";
+import profileImage from "./assets/picture1.png";
+import project1 from "./assets/eis.png";
+import project2 from "./assets/Ordering System.png";
+import project3 from "./assets/recreating website.png";
+
+import {
+  FaReact,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaGithub,
+} from "react-icons/fa";
+import { SiTypescript, SiNodedotjs } from "react-icons/si";
+import { MdDevices } from "react-icons/md";
 
 function Portfolio() {
   const scrollToSection = (id: string) => {
@@ -15,17 +31,41 @@ function Portfolio() {
   };
 
   const skills = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Responsive Design",
-    "Node.js",
-    "Git",
-  ];
+  {
+    name: "React",
+    icon: <FaReact className="skill-icon react-icon" />,
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript className="skill-icon typescript-icon" />,
+  },
+  {
+    name: "JavaScript",
+    icon: <FaJs className="skill-icon javascript-icon" />,
+  },
+  {
+    name: "HTML",
+    icon: <FaHtml5 className="skill-icon html-icon" />,
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3Alt className="skill-icon css-icon" />,
+  },
+  {
+    name: "Responsive Design",
+    icon: <MdDevices className="skill-icon responsive-icon" />,
+  },
+  {
+    name: "Node.js",
+    icon: <SiNodedotjs className="skill-icon node-icon" />,
+  },
+  {
+    name: "GitHub",
+    icon: <FaGithub className="skill-icon github-icon" />,
+  },
+];
 
-const achievements = [
+ const achievements = [
   {
     title: "Front-End Development Libraries V8",
     description:
@@ -38,31 +78,40 @@ const achievements = [
       "Completed a freeCodeCamp certification covering HTML, CSS, accessibility, and responsive design.",
     image: certificate2,
   },
+  {
+    title: "National Certificate II - Computer Systems Servicing",
+    description:
+      "Awarded TESDA National Certificate II in Computer Systems Servicing, demonstrating skills in installation, configuration, maintenance, and repair of computer systems and networks.",
+    image: nc2Certificate,
+  },
+  {
+    title: "National Certificate III - Events Management Services",
+    description:
+      "Awarded TESDA National Certificate III in Events Management Services, showing competence in planning, coordinating, and supporting event operations.",
+    image: nc3Certificate,
+  },
 ];
 
   const projects = [
-    {
-      title: "E-Commerce Website",
-      description:
-        "A modern shopping platform with product listings, cart features, and responsive design.",
-      live: "https://example.com",
-      github: "https://github.com/yourusername/project1",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A productivity app for organizing daily tasks with status tracking and filtering.",
-      live: "https://example.com",
-      github: "https://github.com/yourusername/project2",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "A clean weather app that displays forecast information in a simple and user-friendly interface.",
-      live: "https://example.com",
-      github: "https://github.com/yourusername/project3",
-    },
-  ];
+  {
+    title: "E-Commerce Website",
+    description:
+      "A modern shopping platform with product listings, cart features, and responsive design.",
+    image: project1,
+  },
+  {
+    title: "Task Management App",
+    description:
+      "A productivity app for organizing daily tasks with status tracking and filtering.",
+    image: project2,
+  },
+  {
+    title: "Weather Dashboard",
+    description:
+      "A clean weather app that displays forecast information in a simple and user-friendly interface.",
+    image: project3,
+  },
+];
 
   return (
     <div className="portfolio-app">
@@ -82,32 +131,43 @@ const achievements = [
 
       <main>
         <section id="home" className="hero-section">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              Hi, I'm <span className="highlight">Anthony</span>
-            </h1>
-            <p className="hero-subtitle">
-              A creative frontend developer passionate about building presentable,
-              responsive, and user-friendly web applications.
-            </p>
+  <div className="hero-container">
+    <div className="hero-text">
+      <h1 className="hero-title">
+        Hi, I'm <span className="highlight">Anthony</span>
+      </h1>
 
-            <div className="hero-buttons">
-              <button
-                className="primary-button"
-                onClick={() => scrollToSection("projects")}
-              >
-                View Projects
-              </button>
+      <p className="hero-subtitle">
+        A creative frontend developer passionate about building presentable,
+        responsive, and user-friendly web applications.
+      </p>
 
-              <button
-                className="secondary-button"
-                onClick={() => scrollToSection("contact")}
-              >
-                Contact Me
-              </button>
-            </div>
-          </div>
-        </section>
+      <div className="hero-buttons">
+        <button
+          className="primary-button"
+          onClick={() => scrollToSection("projects")}
+        >
+          View Projects
+        </button>
+
+        <button
+          className="secondary-button"
+          onClick={() => scrollToSection("contact")}
+        >
+          Contact Me
+        </button>
+      </div>
+    </div>
+
+    <div className="hero-image-wrapper">
+      <img
+        src={profileImage}
+        alt="Anthony profile"
+        className="profile-image"
+      />
+    </div>
+  </div>
+</section>
 
         <section id="about" className="section">
           <h2 className="section-title">About Me</h2>
@@ -119,65 +179,54 @@ const achievements = [
           </p>
 
           <div className="skills-container">
-            {skills.map((skill, index) => (
-              <span key={index} className="skill-badge">
-                {skill}
-              </span>
-            ))}
-          </div>
+  {skills.map((skill, index) => (
+    <span key={index} className="skill-badge">
+      {skill.icon}
+      <span>{skill.name}</span>
+    </span>
+  ))}
+</div>
         </section>
 
         <section id="achievements" className="section">
-          <h2 className="section-title">Achievements</h2>
-          <p className="section-text">
-            Some highlights of my learning journey and development experience.
-          </p>
+  <h2 className="section-title">Achievements</h2>
+  <p className="section-text">
+    Some highlights of my learning journey and development experience.
+  </p>
 
-          <div className="project-grid">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="project-card">
-                <img
-                  src={achievement.image}
-                  alt={achievement.title}
-                  className="achievement-image"
-                />
-                <h3 className="project-title">{achievement.title}</h3>
-                <p className="project-description">
-                  {achievement.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+  <div className="project-grid">
+    {achievements.map((achievement, index) => (
+      <div key={index} className="project-card">
+        <img
+          src={achievement.image}
+          alt={achievement.title}
+          className="achievement-image"
+        />
+        <h3 className="project-title">{achievement.title}</h3>
+        <p className="project-description">{achievement.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
         <section id="projects" className="section">
-          <h2 className="section-title">Projects</h2>
+  <h2 className="section-title">Projects</h2>
 
-          <div className="project-grid">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+  <div className="project-grid">
+    {projects.map((project, index) => (
+      <div key={index} className="project-card">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="project-image"
+        />
 
-                <div className="card-buttons">
-                  <button
-                    className="primary-button"
-                    onClick={() => openLink(project.live)}
-                  >
-                    Live Demo
-                  </button>
-
-                  <button
-                    className="secondary-button"
-                    onClick={() => openLink(project.github)}
-                  >
-                    GitHub
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <h3 className="project-title">{project.title}</h3>
+        <p className="project-description">{project.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
         <section id="contact" className="section">
           <h2 className="section-title">Contact</h2>
@@ -188,21 +237,23 @@ const achievements = [
           <div className="contact-buttons">
             <button
               className="primary-button"
-              onClick={() => openLink("mailto:acmeparanum.student@Asiancollege.edu.ph")}
+              onClick={() =>
+                openLink("mailto:acmeparanum.student@Asiancollege.edu.ph")
+              }
             >
               Email Me
             </button>
 
             <button
               className="secondary-button"
-              onClick={() => openLink("https://github.com/antonyms13")}
+              onClick={() => openLink("https://github.com/Antonyns13")}
             >
               GitHub
             </button>
 
             <button
               className="secondary-button"
-              onClick={() => openLink("https://linkedin.com/in/onyomeparanum@gmail.com")}
+              onClick={() => openLink("https://linkedin.com")}
             >
               LinkedIn
             </button>
@@ -211,7 +262,7 @@ const achievements = [
       </main>
 
       <footer className="portfolio-footer">
-        <p>© 2026 Your Name. All rights reserved.</p>
+        <p>© 2026 Anthony. All rights reserved.</p>
       </footer>
     </div>
   );

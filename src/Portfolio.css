@@ -57,6 +57,86 @@ button {
   transition: 0.3s ease;
 }
 
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: #0f172a;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: block;
+  padding: 8px;
+}
+
+.skill-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #e2e8f0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-3px);
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+}
+
+.skill-icon {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Icon Colors */
+.react-icon {
+  color: #61dafb;
+  animation: spinReact 6s linear infinite;
+}
+
+.typescript-icon {
+  color: #3178c6;
+}
+
+.javascript-icon {
+  color: #f7df1e;
+}
+
+.html-icon {
+  color: #e34f26;
+}
+
+.css-icon {
+  color: #1572b6;
+}
+
+.responsive-icon {
+  color: #38bdf8;
+}
+
+.node-icon {
+  color: #3c873a;
+}
+
+.github-icon {
+  color: #ffffff;
+}
+
+/* React spin animation */
+@keyframes spinReact {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .portfolio-nav button:hover {
   background: rgba(56, 189, 248, 0.15);
   border-color: #38bdf8;
@@ -67,36 +147,80 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 40px 20px;
 }
 
-.hero-content {
-  max-width: 800px;
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #38bdf8;
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.8rem, 6vw, 5rem);
   margin-bottom: 20px;
   font-weight: 800;
-}
-
-.highlight {
-  color: #38bdf8;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.8;
   color: #cbd5e1;
   margin-bottom: 30px;
+  max-width: 600px;
 }
 
 .hero-buttons {
   display: flex;
   gap: 16px;
-  justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .profile-image {
+    width: 240px;
+    height: 240px;
+  }
 }
 
 .primary-button,
@@ -168,13 +292,17 @@ button {
 }
 .achievement-image {
   width: 100%;
-  height: 220px;
+  height: 260px;
   object-fit: contain;
   background: white;
   border-radius: 12px;
   margin-bottom: 16px;
   display: block;
   padding: 8px;
+}
+
+.project-description {
+  margin-bottom: 0;
 }
 
 
